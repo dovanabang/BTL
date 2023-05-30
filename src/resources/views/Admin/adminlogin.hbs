@@ -1,0 +1,83 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <div class="image-container"> 
+        <img src="/img/15_generated.jpg" class="" alt="Logo" max-width="100%" height="50px" style="border-radius: 50%;">
+      </div>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a id="danhmuc" class="tab-binhthuong" href="/admin/pageAdmin" >Danh mục sản phẩm</a></li>
+        <li><a id="quanlitk" class="tab-binhthuong" href="/admin/quanlitk" >Quản lí tài khoản</a></li>
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a class="dropdown-toggle tab-binhthuong" data-toggle="dropdown" id="m2" href="#">Cấp tài khoản <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a  id="dkcs" href="/admin/themUserCoso">Cơ sở sản xuất</a></li>
+              <li><a  id="dkpp" href="/admin/themUserDaily">đại lí phân phối</a></li>
+              <li><a  id="dkbh" href="/admin/themUserBaohanh">trung tâm bảo hành</a></li>
+            </ul>
+            <li><a id="qlsp" class="tab-binhthuong" href="/admin/quanlisp" >Quản lí dòng sản phẩm</a></li>
+          </li>
+      </ul>
+      </ul>
+    </div>
+  </div>
+</nav>
+ 
+<div class="container-fluid">
+<h1>Danh mục các sản phẩm:</h1>
+</div>
+
+<table class="table table-hover"> <!--bảng products -->
+  <thead>
+    <tr>
+      <th scope="col">STT</th>
+       <th scope="col">Mã Sản Phẩm</th> <!--produc_id -->
+       <th scope="col">Tên Sản Phẩm</th> <!--produc_name -->
+       <th scope="col">Dòng Sản Phẩm</th> <!--produc_line -->
+       <th scope="col">Giá Sản Phẩm</th> <!--produc_price -->
+       <th scope="col">Mô tả sản phẩm</th> <!--description -->
+       <th scope="col">Trạng thái sản phẩm</th> <!--product_status -->
+       <th scope="col">Mã Kho</th>
+       <th scope="col">Mã Shop</th>
+       <th scope="col">Thời gian bảo hành</th>
+       <th scope="col">Đang bảo hành</th>
+       <th scope="col">Ngày bán</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each Mathang}}
+
+    <tr>
+      <th scope="row">{{sum @index 1}}</th>
+      <th scope="row">{{this.masp}}</th>
+      <th scope="row">{{this.tensp}}</th>
+      <th scope="row">{{this.dongsp}}</th>
+      <th scope="row">{{this.giasp}}</th>
+      <th scope="row">{{this.motasp}}</th>
+      <th scope="row">{{this.trangthaisp}}</th>
+      <th scope="row">{{this.makho}}</th>
+      <th scope="row">{{this.mashop}}</th>
+      <th scope="row">{{this.thoigianbaohanh}}</th>
+      <th scope="row">{{this.dangbaohanh}}</th>
+      <th scope="row">{{this.ngayban}}</th>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+<div class="clearfix bottomfooter">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 navbar-fixed-bottom" style="margin-top:auto;">
+        <span class="copyright">Copyright &copy; 2022, Công ty BigCorp</span>
+      </div>
+    </div>
+  </div>
+</div>

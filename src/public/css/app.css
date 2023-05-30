@@ -1,0 +1,27 @@
+body {
+  font-family: 'Syne', sans-serif; }
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column; }
+
+.image-container {
+  text-align: left;
+  width: 100%; }
+
+.tab-binhthuong {
+  background-color: black;
+  border-left: solid 1px #dcdcdc;
+  border-right: solid 1px #dcdcdc;
+  border-top: solid 1px #dddddd;
+  border-bottom: solid 0px #dddddd; }
+
+.themsp {
+  float: center;
+  width: fit-content; }
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table; }

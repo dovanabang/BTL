@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+ <style>
+  * {box-sizing: border-box}
+ body{
+   font-family: 'Noto Sans JP', sans-serif;
+ }
+ h1, label{
+   color: DodgerBlue;
+ }
+   input[type=text], input[type=password] {
+   width: 100%;
+   padding: 15px;
+   margin: 5px 0 22px 0;
+   display: inline-block;
+   border: none;
+   width:100%;
+   resize: vertical;
+   padding:15px;
+   border-radius:15px;
+   border:0;
+   box-shadow:4px 4px 10px rgba(0,0,0,0.2);
+ }
+input[type=text]:focus, input[type=password]:focus {
+   outline: none;
+ }
+hr {
+   border: 1px solid #f1f1f1;
+   margin-bottom: 25px;
+ }
+button {
+   background-color: #4CAF50;
+   color: white;
+   padding: 14px 20px;
+   margin: 8px 0;
+   border: none;
+   cursor: pointer;
+   width: 100%;
+   opacity: 0.9;
+ }
+button:hover {
+   opacity:1;
+ }
+.cancelbtn {
+   padding: 14px 20px;
+   background-color: #f44336;
+ }
+.signupbtn {
+   float: left;
+   width: 100%;
+   border-radius:15px;
+   border:0;
+   box-shadow:4px 4px 10px rgba(0,0,0,0.2);
+ }
+.container {
+   padding: 16px;
+ }
+.clearfix::after {
+   content: "";
+   clear: both;
+   display: table;
+ }
+
+ </style> 
+
+<form method="POST" class="container" id="signup1" action="/admin/themUserCoso">
+  <div class="container">
+    <h1>Thêm tài khoản cơ sở sản xuất:</h1>
+  
+    <label for="username"><i class="glyphicon glyphicon-user"></i> Tên người dùng:</label>
+    <input type="text" placeholder="Enter your name user" id="username" name="username" required>
+
+  
+    <label for="email"><i class="glyphicon glyphicon-envelope"> Email:</i></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+
+    <label for="password"><i class="glyphicon glyphicon-lock"> Mật khẩu:</i></label>
+    <input type="password" name="password" id="password" placeholder="Password" />
+
+    <label for="re-pass"><i class="glyphicon glyphicon-lock"> Nhập lại mật khẩu:</i></label>
+    <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password"/>
+
+
+<p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+<div class="clearfix">
+  <!-- <button type="button" class="cancelbtn">Cancel</button> -->
+  
+  <button type="submit" class="signupbtn">Thêm</button>
+</div>
+</div>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <div class="image-container"> 
+        <img src="/img/15_generated.jpg" class="" alt="Logo" max-width="100%" height="50px" style="border-radius: 50%;">
+      </div>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a id="danhmuc" class="tab-binhthuong" href="dailyphanphoi.html" >Sản Phẩm Mới Từ Cơ Sở Sản Xuất</a></li>
+        <!-- <li><a id="captk" class="tab-binhthuong" href="test.html" >Cấp tài khoản</a></li> -->
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a class="dropdown-toggle tab-binhthuong" data-toggle="dropdown" id="m2" href="#">Nhận sản phẩm <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a  id="dkcs" href="#">Sản Phẩm Cần Bảo Hành</a></li>
+              <li><a  id="dkpp" href="dailyphanphoi_sanphamdabh.html">Sản Phẩm Đã Bảo Hành</a></li>
+              
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a class="dropdown-toggle tab-binhthuong" data-toggle="dropdown" id="m2" href="#">Thống kê sản phẩm <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a  id="dkcs" href="/daily/thongke/loaisp">Loại Sản Phẩm</a></li>
+                <li><a  id="dkpp" href="/daily/thongke/soluong">Số Lượng Sản Phẩm Bán Ra</a></li>
+                
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a class="dropdown-toggle tab-binhthuong" data-toggle="dropdown" id="m2" href="#">Bán sản phẩm<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a  id="dkcs" href="/daily/daban">Đã bán</a></li>
+                <li><a  id="dkpp" href="/daily/chuaban">Chưa bán</a></li>
+              </ul>
+            </li>
+          </ul>
+          <li><a id="sptv_cssx" class="tab-binhthuong" href="/daily/travecoso" >Trả sản phẩm cho cơ sở sản xuất</a></li>
+    </div>
+  </div>
+</nav>
+ 
+<div class="container-fluid">
+    <h1>Sản phẩm đã bán:</h1>
+    </div>
+    <div class="container-fluid">
+      <a href="dailyphanphoi_btn_themsanphamdaban.html"><button type="button" class="btn btn-primary">Thêm sản phẩm</button></a>
+     </div> 
+    <table class="table table-hover"> <!--bảng products -->
+      <thead>
+        <tr>
+          <th scope="col">STT</th>
+          <th scope="col">Mã Sản phẩm</th>
+          <th scope="col">Tên sản phẩm</th>
+          <th scope="col">Mã đại lý</th> 
+          <th scope="col">Ngày bán</th>
+          <th scope="col">Mã khách hàng</th>
+       </tr>
+     </thead>
+     <tbody>
+       {{#each Chuaban}}
+       <tr>
+         <th scope="row">{{sum @index 1}}</th>
+         <th scope="row">{{this.Masp}}</th>
+         <th scope="row">{{this.Tensp}}</th>
+         <th scope="row">{{this.Madaily}}</th>
+         <th scope="row">{{this.Ngayban}}</th>
+         <th scope="row">{{this.Makhachhang}}</th>
+          
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+ 
+  <div class="clearfix bottomfooter">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 navbar-fixed-bottom" style="margin-top:auto;">
+          <span class="copyright">Copyright &copy; 2022, Công ty BigCorp</span>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,100 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <div class="image-container"> 
+        <img src="/img/15_generated.jpg" class="" alt="Logo" max-width="100%" height="50px" style="border-radius: 50%;">
+      </div>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a id="danhmuc" class="tab-binhthuong" href="/admin/pageAdmin" >Danh mục sản phẩm</a></li>
+        <li><a id="quanlitk" class="tab-binhthuong" href="/admin/quanlitk" >Quản lí tài khoản</a></li>
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a class="dropdown-toggle tab-binhthuong" data-toggle="dropdown" id="m2" href="#">Cấp tài khoản <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a  id="dkcs" href="/admin/themUserCoso">Cơ sở sản xuất</a></li>
+              <li><a  id="dkpp" href="/admin/themUserDaily">đại lí phân phối</a></li>
+              <li><a  id="dkbh" href="/admin/themUserBaohanh">trung tâm bảo hành</a></li>
+            </ul>
+            <li><a id="qlsp" class="tab-binhthuong" href="/admin/quanlisp" >Quản lí dòng sản phẩm</a></li>
+          </li>
+      </ul>
+      </ul>
+    </div>
+  </div>
+</nav>
+ 
+
+<form method="POST" action="/admin/quanli/update/{{Mathang._id}}?_method=PUT">
+    <div class="container">
+      <h1>Sửa sản phẩm:</h1>
+    
+      <div class="col-xs-2">
+        <label for="masp">Mã sản phẩm</label>
+        <input type="text" class="form-control" value="{{Mathang.masp}}" placeholder="Mã sản phẩm" id="masp" name="masp">
+      </div>
+      <div class="col-xs-2">
+        <label for="tesp"></label>>Tên sản phẩm</label>
+        <input type="text" class="form-control" value="{{Mathang.tensp}}" placeholder="Tên sản phẩm" id="tensp" name="tensp">
+      </div>
+      <div class="col-xs-2">
+        <label for="dongsp"></label>>Dòng sản phẩm</label>
+        <input type="text" class="form-control" value="{{Mathang.dongsp}}" placeholder="Dòng sản phẩm" id="dongsp" name="dongsp">
+      </div>
+      <div class="col-xs-2">
+        <label for="giasp"></label>>Giá sản phẩm</label>
+        <input type="text" class="form-control" value="{{Mathang.giasp}}" placeholder="Giá sản phẩm" id="giasp" name="giasp">
+      </div>
+      <div class="col-xs-2">
+        <label for="motasp"></label>>Mô tả sản phẩm</label>
+        <input type="text" class="form-control" value="{{Mathang.motasp}}" placeholder="Mô tả sản phẩm" id="motasp" name="motasp">
+      </div>
+      <div class="col-xs-2">
+        <label for="trangthaisp"></label>>Trạng thái sản phẩm</label>
+        <input type="text" class="form-control" value="{{Mathang.trangthaisp}}" placeholder="Trạng thái sản phẩm" id="trangthaisp" name="trangthaisp">
+      </div>  
+      <div class="col-xs-2">
+        <label for="makho"></label>>Mã kho</label>
+        <input type="text" class="form-control" value="{{Mathang.makho}}" placeholder="Mã kho" id="makho" name="makho">
+      </div> 
+      <div class="col-xs-2">
+        <label for="mashop"></label>>Mã shop</label>
+        <input type="text" class="form-control" value="{{Mathang.mashop}}" placeholder="Mã shop" id="mashop" name="mashop">
+      </div> 
+      <div class="col-xs-2">
+        <label for="thoigianbaohanh"></label>>Thời gian bảo hành</label>
+        <input type="text" class="form-control" value="{{Mathang.thoigianbaohanh}}" placeholder="Thời gian bảo hành" id="thoigianbaohanh" name="thoigianbaohanh">
+      </div> 
+      <div class="col-xs-2">
+        <label for="dangbaohanh"></label>Đang bảo hành</label>
+        <input type="text" class="form-control" value="{{Mathang.dangbaohanh}}" placeholder="Thời gian bảo hành" id="dangbaohanh" name="dangbaohanh">
+      </div> 
+      <div class="col-xs-2">
+        <label for="ngayban"></label>>Ngày bán</label>
+        <input type="text" class="form-control" value="{{Mathang.ngayban}}" placeholder="Ngày bán" id="ngayban" name="ngayban">
+      </div> 
+  
+  </div>
+  <p>
+
+  </p>
+  <div class="themsp container">
+    <button type="submit" class="btn btn-success clearfix">Lưu</button>
+  </div>
+ 
+  </form>
+  <div class="clearfix bottomfooter">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 navbar-fixed-bottom" style="margin-top:auto;">
+          <span class="copyright">Copyright &copy; 2022, Công ty BigCorp</span>
+        </div>
+      </div>
+    </div>
+  </div>

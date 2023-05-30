@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<style>
+    .image-container {
+      
+        text-align: center;
+        width: 100%;
+    }
+    
+    .tab-binhthuong {
+        
+        background-color: #eae8e8;
+        border-left: solid 1px #dcdcdc;
+        border-right: solid 1px #dcdcdc;
+        border-top: solid 1px #dddddd;
+        border-bottom: solid 0px #dddddd;
+    }
+
+    .themsp {
+        float: center;
+        width: fit-content;
+    }
+    .clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+  </style>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <div class="image-container"> 
+        <img src="/img/15_generated.jpg" class="" alt="Logo" max-width="100%" height="50px" style="border-radius: 50%;">
+      </div>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a id="danhmuc" class="tab-binhthuong" href="/coso" >Kho sản phẩm</a></li>
+        <!-- <li><a id="captk" class="tab-binhthuong" href="test.html" >Cấp tài khoản</a></li> -->
+        
+        <li><a id="qlsp" class="tab-binhthuong" href="/coso/xuatsp" >Xuất sản phẩm cho đại lý</a></li>
+        <li><a id="tksp_cssx" class="tab-binhthuong" href="/coso/thongke" >Thống kê sản phẩm</a></li>
+        <li><a id="sptv_cssx" class="tab-binhthuong" href="/coso/sptrave" >Sản phẩm trả về</a></li>
+    </div>
+  </div>
+</nav>
+ 
+<div class="container-fluid">
+  <h1>Nhập lô sản phẩm mới vào kho:</h1>
+  </div>
+  
+ <div class="container-fluid">
+  <a href="/coso/themkho"><button type="button" class="btn btn-primary">Thêm kho sản phẩm</button></a>
+ </div> 
+  <table class="table table-hover"> <!--bảng products -->
+    <thead>
+      <tr>
+        <th scope="col">STT</th>
+         <th scope="col">Mã Sản Phẩm</th> <!--stock_id -->    
+         <th scope="col">Tên Sản Phẩm</th> 
+          <th scope="col">Số lượng</th>
+         <th scope="col">Địa Chỉ Kho</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each Khosp}}
+      <tr>
+        <th scope="row">{{sum @index 1}}</th>
+        <th scope="row">{{this.makho}}</th>     
+        <th scope="row">{{this.tensp}}</th>   
+        <th scope="row">{{this.soluong}}</th>
+        <th scope="row">{{this.diachikho}}</th>
+        <th>
+        {{!-- <a href="quanli/{{this._id}}/sua">Sửa</a> --}}
+        <a href="coso/{{this._id}}" class="btn btn-primary" data-id="{{this._id}}" data-bs-toggle="modal" data-bs-target="#delete-kho" >Xóa</a>
+      </th>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+ 
+  </form>
+  <div class="clearfix bottomfooter">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 navbar-fixed-bottom" style="margin-top:auto;">
+          <span class="copyright">Copyright &copy; 2022, Công ty BigCorp</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{!   Xoa}}
+
+<div class="modal" tabindex="-1" id="delete-kho">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Xóa sản phẩm</h5>
+        <button type="button" class="btn-close"  data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Bạn chắc rằng muốn xóa không?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+        <button type="button" class="btn btn-danger" id="btl-delete-kho">Xóa bỏ</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{{!-- form xoa --}}
+<form method="POST" name="delete-form"></form>
+
+{{!-- document.addEventListener('DOMContentLoaded', function() {
+    $('#delete-sp').on('show.bs.modal', function (event){
+      var button =$(event.relatedTarget);
+      var id = button.data('id');
+        console.log("\n\n\n\n\n\n" + id);
+    });
+  }); --}}
+<script>
+  var Idsp;
+  var deleteForm = document.forms['delete-form'];
+  const exampleModal = document.getElementById('delete-kho');
+
+
+  exampleModal.addEventListener('show.bs.modal', event => {
+    const button = event.relatedTarget;
+    
+    Idsp = button.getAttribute('data-id');
+    // console.log("\n\n\n\n\n\n" + id);
+  });
+
+  var btnDeleteSP = document.getElementById('btl-delete-kho');
+
+  btnDeleteSP.onclick = function() {
+    //alert(Idsp);
+    deleteForm.action = '/coso/delete/' + Idsp + "?_method=DELETE";
+    deleteForm.submit();
+  }   
+
+ 
+
+  
+</script>
+</body>
+</html>

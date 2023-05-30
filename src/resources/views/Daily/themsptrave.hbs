@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+ <style>
+  * {box-sizing: border-box}
+ body{
+   font-family: 'Noto Sans JP', sans-serif;
+ }
+ h1, label{
+   color: DodgerBlue;
+ }
+   input[type=text], input[type=password] {
+   width: 100%;
+   padding: 15px;
+   margin: 5px 0 22px 0;
+   display: inline-block;
+   border: none;
+   width:100%;
+   resize: vertical;
+   padding:15px;
+   border-radius:15px;
+   border:0;
+   box-shadow:4px 4px 10px rgba(0,0,0,0.2);
+ }
+input[type=text]:focus, input[type=password]:focus {
+   outline: none;
+ }
+hr {
+   border: 1px solid #f1f1f1;
+   margin-bottom: 25px;
+ }
+button {
+   background-color: #4CAF50;
+   color: white;
+   padding: 14px 20px;
+   margin: 8px 0;
+   border: none;
+   cursor: pointer;
+   width: 100%;
+   opacity: 0.9;
+ }
+button:hover {
+   opacity:1;
+ }
+.cancelbtn {
+   padding: 14px 20px;
+   background-color: #f44336;
+ }
+.signupbtn {
+   float: left;
+   width: 100%;
+   border-radius:15px;
+   border:0;
+   box-shadow:4px 4px 10px rgba(0,0,0,0.2);
+ }
+.container {
+   padding: 16px;
+ }
+.clearfix::after {
+   content: "";
+   clear: both;
+   display: table;
+ }
+
+ </style> 
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <div class="image-container"> 
+        <img src="/img/15_generated.jpg" class="" alt="Logo" max-width="100%" height="50px" style="border-radius: 50%;">
+      </div>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a id="danhmuc" class="tab-binhthuong" href="/daily" >Sản Phẩm Mới Từ Cơ Sở Sản Xuất</a></li>
+        <!-- <li><a id="captk" class="tab-binhthuong" href="test.html" >Cấp tài khoản</a></li> -->
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a class="dropdown-toggle tab-binhthuong" data-toggle="dropdown" id="m2" >Nhận sản phẩm <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a  id="dkcs" href="/daily/spcanbaohanh">Sản Phẩm Cần Bảo Hành</a></li>
+              <li><a  id="dkpp" href="/daily/spdabaohanh">Sản Phẩm Đã Bảo Hành</a></li>
+              
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a class="dropdown-toggle tab-binhthuong" data-toggle="dropdown" id="m2" href="#">Thống kê sản phẩm <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a  id="dkcs" href="/daily/thongke/loaisp">Loại Sản Phẩm</a></li>
+                <li><a  id="dkpp" href="/daily/thongke/soluong">Số Lượng Sản Phẩm Bán Ra</a></li>
+                
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a class="dropdown-toggle tab-binhthuong" data-toggle="dropdown" id="m2" href="#">Bán sản phẩm<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a  id="dkcs" href="/daily/daban">Đã bán</a></li>
+                <li><a  id="dkpp" href="/daily/chuaban">Chưa bán</a></li>
+              </ul>
+            </li>
+          </ul>
+          <li><a id="sptv_cssx" class="tab-binhthuong" href="/daily/travecoso" >Trả sản phẩm cho cơ sở sản xuất</a></li>
+    </div>
+  </div>
+</nav>
+ 
+
+<form method="POST" action="/daily/themtrave">
+    <div class="container">
+      <h1>Thêm sản phẩm:</h1>
+    
+      <div class="col-xs-pull-3">
+        <label for="Masp">Mã Sản Phẩm</label>
+        <input type="text" class="form-control" placeholder="Mã sản phẩm" id="Masp" name="Masp">
+        <br>
+      </div>
+      <div class="col-xs-pull-3">
+        <label for="Tensp">Tên Sản Phẩm</label>
+        <input type="text" class="form-control" placeholder="Tên sản phẩm" id="Tensp" name="Tensp">
+        <br>
+      </div>
+      <div class="col-xs-pull-3">
+        <label for="Makho">Trả về cơ sở</label>
+        <input type="text" class="form-control" placeholder="Trạng thái bảo hành" id="Makho" name="Makho">
+        <br>
+      </div>
+        <div class="col-xs-pull-3">
+        <label for="Ngaytra">Ngày trả về</label>
+        <input type="text" class="form-control" placeholder="Ngày trả về" id="Ngaytra" name="Ngaytra">
+        <br>
+      </div>
+        <div class="col-xs-pull-3">
+            <label for="Lido">Lí do hoàn trả</label>
+            <input type="text" class="form-control" placeholder="Lí do hoàn trả" id="Lido" name="Lido">
+            <br>
+      </div>
+  
+  </div>
+  <p>
+
+  </p>
+  <div class="themsp container">
+    <button type="submit" class="btn btn-success clearfix">Thêm</button>
+  </div>
+ 
+  </form>
+  <div class="clearfix bottomfooter">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 navbar-fixed-bottom" style="margin-top:auto;">
+          <span class="copyright">Copyright &copy; 2022, Công ty BigCorp</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
